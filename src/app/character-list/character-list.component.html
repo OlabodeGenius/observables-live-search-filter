@@ -1,0 +1,10 @@
+<div class="container">
+    <button (click)="loadPokemon()">Load Pokémon</button>
+    <div *ngIf="isLoading">Loading...</div>
+    <ul>
+      <li *ngFor="let pokemon of pokemonList">
+        {{ pokemon.name }}
+      </li>
+    </ul>
+  </div>
+  
