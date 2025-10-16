@@ -13,4 +13,11 @@ export class PokemonService {
   getPokemonList(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
+
+  searchPokemon(term: string): Observable<any> {
+    if (!term.trim()) {
+      return this.getPokemonList();
+    }
+    return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon?limit=1000`);
+  }
 }
